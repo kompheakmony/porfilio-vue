@@ -5,8 +5,8 @@ import { watch, computed } from 'vue';
 const { locale } = useI18n();
 
 const locales = [
-  { code: 'en', name: 'English', flagSrc: '/src/assets/svg/us.svg' },
-  { code: 'km', name: 'ភាសាខ្មែរ', flagSrc: '/src/assets/svg/cambodia.svg' },
+  { code: 'en', name: 'English', flagSrc: 'https://nyzcam.vercel.app/src/assets/svg/us.svg' },
+  { code: 'km', name: 'ភាសាខ្មែរ', flagSrc: 'https://nyzcam.vercel.app/src/assets/svg/cambodia.svg' },
 ];
 
 const currentLocaleData = computed(() => {
