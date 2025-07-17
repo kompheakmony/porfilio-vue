@@ -2,8 +2,6 @@
 import HeroSVG from "../assets/svg/hero.svg";
 
 const heroData = {
-  firstName: "SET",
-  lastName: "Kumpheakmny",
   stats: [
     { value: "5+", labelKey: "hero.experience_label" },
     { value: "50+", labelKey: "hero.projects_label" },
@@ -54,7 +52,8 @@ const heroData = {
         <div class="bg-gray-800 p-3 rounded-2xl shadow-lg">
           <img
             :src="HeroSVG"
-            :alt="$t('hero.portrait_alt', [heroData.firstName, heroData.lastName])"
+            <!-- Use the translated names for the alt text -->
+            :alt="$t('hero.portrait_alt', { firstName: $t('hero.firstName'), lastName: $t('hero.lastName') })"
             class="w-full max-h-[70vh] object-cover rounded-xl"
           />
         </div>
@@ -62,8 +61,8 @@ const heroData = {
 
       <div class="hidden lg:flex lg:col-span-3 justify-center items-center bg-yellow-500 rounded-2xl shadow-md self-stretch" data-aos="slide-left" data-aos-delay="400">
         <h2 class="transform -rotate-90 text-xl font-bold text-gray-900 tracking-wider uppercase">
-          <span>{{ heroData.firstName }}</span>
-          <span class="text-white">{{ heroData.lastName }}</span>
+          <span>{{ $t('hero.firstName') }}</span>
+          <span class="text-white">{{ $t('hero.lastName') }}</span>
         </h2>
       </div>
 
