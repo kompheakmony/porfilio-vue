@@ -1,45 +1,55 @@
 import { HomeIcon, AcademicCapIcon, Cog6ToothIcon, DocumentDuplicateIcon, UserIcon} from "@heroicons/vue/24/outline";
+import { 
+  CodeBracketSquareIcon, 
+  PaintBrushIcon, 
+  ServerStackIcon, 
+  ChartBarIcon, 
+  CameraIcon, 
+  VideoCameraIcon,
+  FilmIcon,
+  CodeBracketIcon,
+  MegaphoneIcon,
+  PhotoIcon,
+  EnvelopeIcon,
+  PhoneIcon,
+  MapPinIcon
+} from '@heroicons/vue/24/solid';
 
 import ProjectImg1 from "../assets/img/project1.png";
 import ProjectImg2 from "../assets/img/project2.png";
 import ProjectImg3 from "../assets/img/project3.png";
-import Logo1 from "../assets/img/logo1.png";
-import Logo2 from "../public/img/logo2.png";
-import Logo3 from "../assets/img/logo3.png";
 import Avatar1 from "../assets/img/avatar1.png";
 import Avatar2 from "../assets/img/avatar2.png";
 import Avatar3 from "../assets/img/avatar3.png";
 import Avatar4 from "../assets/img/avatar4.png";
-import Laravel from "../assets/svg/laravel.svg";
-import React from "../assets/svg/react.svg";
-import Vue from "../assets/svg/vue-9.svg";
-import ViteJS from "../assets/svg/vitejs.svg";
-import Python from "../assets/svg/python.svg";
-import Node from "../assets/svg/node.svg";
 
 export const navItems = [
   {
-    name: "Home",
+    labelKey: "nav.home",
     href: "#home",
     icon: HomeIcon,
   },
   {
-    name: "Skills",
+    labelKey: "nav.skills",
     href: "#skills",
     icon: AcademicCapIcon,
   },
   {
-    name: "Services",
-    href: "#services",
+    labelKey: "nav.services",
     icon: Cog6ToothIcon,
   },
   {
-    name: "Projects",
+    labelKey: "nav.projects",
     href: "#projects",
     icon: DocumentDuplicateIcon,
   },
   {
-    name: "Contact",
+    labelKey: "nav.gallery",
+    href: "#gallery",
+    icon: PhotoIcon,
+  },
+  {
+    labelKey: "nav.contact",
     href: "#contact",
     icon: UserIcon,
   },
@@ -47,77 +57,118 @@ export const navItems = [
 
 export const projectsItems = [
   {
-    title: "SAS Website",
+    id: 'sas_website', 
     image: ProjectImg1,
+    link: '#',
+    tags: ['Vue.js', 'Tailwind CSS', 'Vite'],
+    titleKey: 'projects.items.sas_website.title',
+    descriptionKey: 'projects.items.sas_website.desc'
   },
   {
-    title: "Social Mendia Website",
+    id: 'social_media',
     image: ProjectImg2,
+    link: '#',
+    tags: ['Laravel', 'React', 'MySQL'],
+    titleKey: 'projects.items.social_media.title',
+    descriptionKey: 'projects.items.social_media.desc'
   },
   {
-    title: "Admin Panel Website",
+    id: 'admin_panel',
     image: ProjectImg3,
+    link: '#',
+    tags: ['Vue.js', 'Vuex', 'Chart.js'],
+    titleKey: 'projects.items.admin_panel.title',
+    descriptionKey: 'projects.items.admin_panel.desc'
   },
 ];
 
-export const skillsItems = [
+export const skillCategories = [
   {
-    name: "Laravel",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    logo: Laravel,
+    titleKey: 'skills.web_dev.title',
+    skills: [
+      { 
+        nameKey: 'skills.web_dev.laravel_name', 
+        descriptionKey: 'skills.web_dev.laravel_desc',
+        icon: CodeBracketSquareIcon,
+      },
+      { 
+        nameKey: 'skills.web_dev.vue_name', 
+        descriptionKey: 'skills.web_dev.vue_desc',
+        icon: PaintBrushIcon,
+      },
+      { 
+        nameKey: 'skills.web_dev.deploy_name', 
+        descriptionKey: 'skills.web_dev.deploy_desc',
+        icon: ServerStackIcon,
+      },
+    ],
   },
   {
-    name: "React",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    logo: React,
+    titleKey: 'skills.media_prod.title',
+    skills: [
+      { 
+        nameKey: 'skills.media_prod.photo_name', 
+        descriptionKey: 'skills.media_prod.photo_desc',
+        icon: CameraIcon,
+      },
+      { 
+        nameKey: 'skills.media_prod.video_name', 
+        descriptionKey: 'skills.media_prod.video_desc',
+        icon: VideoCameraIcon,
+      },
+      { 
+        nameKey: 'skills.media_prod.edit_name', 
+        descriptionKey: 'skills.media_prod.edit_desc',
+        icon: FilmIcon,
+      },
+    ],
   },
   {
-    name: "Vue",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    logo: Vue,
-  },
-  {
-    name: "ViteJS",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    logo: ViteJS,
-  },
-  {
-    name: "Python",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    logo: Python,
-  },
-  {
-    name: "Node",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    logo: Node,
-  },
+    titleKey: 'skills.marketing.title',
+    skills: [
+      { 
+        nameKey: 'skills.marketing.ads_name', 
+        descriptionKey: 'skills.marketing.ads_desc',
+        icon: ChartBarIcon,
+      },
+    ]
+  }
 ];
 
-export const servicesItems = [
+export const services = [
   {
-    title: "Web Development",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    logo: Logo1,
+    titleKey: 'services.web_dev.title',
+    descriptionKey: 'services.web_dev.desc',
+    icon: CodeBracketIcon,
+    subServiceKeys: [
+      'services.web_dev.sub.backend',
+      'services.web_dev.sub.frontend',
+      'services.web_dev.sub.deploy',
+      'services.web_dev.sub.db',
+    ],
   },
   {
-    title: "Mobile Development",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    logo: Logo2,
+    titleKey: 'services.media_prod.title',
+    descriptionKey: 'services.media_prod.desc',
+    icon: CameraIcon,
+    subServiceKeys: [
+      'services.media_prod.sub.photo',
+      'services.media_prod.sub.video',
+      'services.media_prod.sub.edit',
+      'services.media_prod.sub.motion',
+    ],
   },
   {
-    title: "Game Development",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    logo: Logo3,
-  },
+    titleKey: 'services.marketing.title',
+    descriptionKey: 'services.marketing.desc',
+    icon: MegaphoneIcon,
+    subServiceKeys: [
+      'services.marketing.sub.campaigns',
+      'services.marketing.sub.strategy',
+      'services.marketing.sub.content',
+      'services.marketing.sub.analytics',
+    ],
+  }
 ];
 
 export const testimonialsItems = [
@@ -145,4 +196,24 @@ export const testimonialsItems = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     image: Avatar4,
   },
+];
+export const contactDetails = [
+  {
+    icon: EnvelopeIcon,
+    labelKey: 'contact.details.email_label',
+    value: 'kumpheakmny.set@gmail.com',
+    href: 'mailto:kumpheakmny.set@gmail.com'
+  },
+  {
+    icon: PhoneIcon,
+    labelKey: 'contact.details.phone_label',
+    value: '+855 (15) 558-908',
+    href: 'tel:+85515558908'
+  },
+  {
+    icon: MapPinIcon,
+    labelKey: 'contact.details.location_label',
+    value: 'Phnom Penh, Cambodia',
+    href: 'https://maps.app.goo.gl/5MhsTjzMDcXxCvmf9'
+  }
 ];

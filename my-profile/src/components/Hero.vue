@@ -1,61 +1,72 @@
 <script setup lang="ts">
 import HeroSVG from "../assets/svg/hero.svg";
 
+const heroData = {
+  firstName: "SET",
+  lastName: "Kumpheakmny",
+  stats: [
+    { value: "5+", labelKey: "hero.experience_label" },
+    { value: "50+", labelKey: "hero.projects_label" },
+  ]
+};
 </script>
+
 <template>
-    <section
-      id="home"
-      class="mx-auto max-w-7xl overflow-hidden bg-gray-950"
-    >
-      <div class="relative flex min-h-screen flex-row">
-        <div
-          class="absolute bottom-0 right-0 top-0 h-full w-2/12 bg-yellow-500 lg:w-4/12"
-          data-aos="slide-left"
-          data-aos-delay="1200"
-        >
-          <div class="flex h-full flex-col justify-center">
-            <h1 class="absolute right-[-50%] top-[50%] rotate-90 space-x-4 md:right-0">
-              <span class="text-white">Tony</span>
-              <span class="text-gray-950">Xhepa</span>
-            </h1>
-          </div>
+  <section id="home" class="p-5 sm:p-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center min-h-[calc(100vh-10rem)]">
+      
+      <div class="lg:col-span-5 text-center lg:text-left" data-aos="fade-down">
+        <h1 class="text-4xl md:text-5xl font-bold text-yellow-500 leading-tight">
+          {{ $t('hero.title') }}
+        </h1>
+        <p class="text-2xl md:text-3xl font-medium text-gray-300 mt-2">
+          {{ $t('hero.subtitle') }}
+        </p>
+
+        <p class="mt-6 text-lg text-gray-300">
+          {{ $t('hero.description') }}
+        </p>
+
+        <div class="mt-8 flex justify-center lg:justify-start gap-4">
+          <a href="#contact" class="btn border-yellow-700 bg-yellow-600 text-gray-200 hover:bg-yellow-500">
+            {{ $t('hero.hire_me') }}
+          </a>
+          <a href="#projects" class="btn border-gray-600 bg-gray-800 text-gray-200 hover:bg-gray-700">
+            {{ $t('hero.view_projects') }}
+          </a>
         </div>
-        <div class="flex w-10/12 flex-col-reverse items-center justify-center md:flex-row md:items-end">
-          <div class="px-6 pb-16 pt-5" data-aos="fade-down">
-            <h2 class="text-yellow-500">Full Stack Developer</h2>
-            <br />
-            <div class="flex justify-end">
-              <button class="btn border-yellow-700 bg-yellow-600 text-gray-200 hover:bg-yellow-500">
-                Hire Me
-              </button>
-            </div>
-            <div class="mt-10 flex flex-col gap-10">
-              <div
-                class="flex w-80 items-center gap-5"
-                data-aos="fade-down"
-                data-aos-delay="300"
-              >
-                <h3 class="text-gray-100">25+</h3>
-                <p class="text-gray-200">Years of experience</p>
-              </div>
-              <div
-                class="flex w-80 items-center gap-5"
-                data-aos="fade-down"
-                data-aos-delay="300"
-              >
-                <h3 class="text-gray-100">100+</h3>
-                <p class="text-gray-200">Projects created</p>
-              </div>
-            </div>
-          </div>
-          <div class="mb-4 mt-16 h-96 md:-mb-16 md:h-full">
-            <Image
-              src={HeroSVG}
-              alt="Hero"
-              class="h-full rounded-xl bg-gray-950 object-cover"
-            />
+
+        <div class="mt-12 flex flex-col sm:flex-row justify-center lg:justify-start gap-8">
+          <div 
+            v-for="(stat, index) in heroData.stats" 
+            :key="stat.labelKey" 
+            class="flex items-center gap-3"
+            data-aos="fade-up" 
+            :data-aos-delay="index * 200"
+          >
+            <h3 class="text-4xl font-semibold text-gray-100">{{ stat.value }}</h3>
+            <p class="text-gray-400 leading-snug">{{ $t(stat.labelKey) }}</p>
           </div>
         </div>
       </div>
-    </section>
+      
+      <div class="lg:col-span-4 flex justify-center items-center order-first lg:order-none" data-aos="zoom-in" data-aos-delay="200">
+        <div class="bg-gray-800 p-3 rounded-2xl shadow-lg">
+          <img
+            :src="HeroSVG"
+            :alt="$t('hero.portrait_alt', [heroData.firstName, heroData.lastName])"
+            class="w-full max-h-[70vh] object-cover rounded-xl"
+          />
+        </div>
+      </div>
+
+      <div class="hidden lg:flex lg:col-span-3 justify-center items-center bg-yellow-500 rounded-2xl shadow-md self-stretch" data-aos="slide-left" data-aos-delay="400">
+        <h2 class="transform -rotate-90 text-xl font-bold text-gray-900 tracking-wider uppercase">
+          <span>{{ heroData.firstName }}</span>
+          <span class="text-white">{{ heroData.lastName }}</span>
+        </h2>
+      </div>
+
+    </div>
+  </section>
 </template>

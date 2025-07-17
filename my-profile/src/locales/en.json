@@ -1,0 +1,132 @@
+{
+  "nav": {
+    "home": "Home",
+    "skills": "Skills",
+    "services": "Services",
+    "projects": "Projects",
+    "gallery": "Gallery",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Full-Stack Developer",
+    "subtitle": "& Media Specialist",
+    "description": "I don't just build your web application; I create the stunning photography, engaging video, and professional content that brings it to life.",
+    "hire_me": "Hire Me",
+    "view_projects": "View Projects",
+    "experience_label": "Years of experience",
+    "projects_label": "Projects completed",
+    "portrait_alt": "Portrait of {0} {1}"
+  },
+  "services": {
+    "main_title": "My Services",
+    "subtitle": "SOLUTIONS I PROVIDE",
+    "included": "What's Included:",
+    "web_dev": {
+      "title": "Full-Stack Web Development",
+      "desc": "End-to-end development of high-performance, responsive web applications, from the database to the user interface.",
+      "sub": {
+        "backend": "Backend & API Development (Laravel)",
+        "frontend": "Frontend Development (Vue.js)",
+        "deploy": "Server Deployment & Management",
+        "db": "Database Design & Optimization"
+      }
+    },
+    "media_prod": {
+      "title": "Professional Media Production",
+      "desc": "Creating stunning visual assets that tell your brand's story and capture your audience's attention.",
+      "sub": {
+        "photo": "Product & Portrait Photography",
+        "video": "Promotional Videography",
+        "edit": "Post-Production & Video Editing",
+        "motion": "Motion Graphics"
+      }
+    },
+    "marketing": {
+      "title": "Digital Marketing & Growth",
+      "desc": "Driving targeted traffic and measurable results through data-driven advertising and online strategies.",
+      "sub": {
+        "campaigns": "Google & Facebook Ad Campaigns",
+        "strategy": "Social Media Strategy",
+        "content": "Content Marketing",
+        "analytics": "Performance Analytics"
+      }
+    }
+  },
+  "skills": {
+    "main_title": "My Capabilities",
+    "subtitle": "THE SKILLS I BRING TO THE TABLE",
+    "web_dev": {
+      "title": "Web Development",
+      "laravel_name": "Laravel (Backend)",
+      "laravel_desc": "Building robust, scalable server-side applications and APIs with the PHP framework Laravel.",
+      "vue_name": "Vue.js (Frontend)",
+      "vue_desc": "Creating interactive, high-performance user interfaces and single-page applications with Vue.",
+      "deploy_name": "Web Deployment",
+      "deploy_desc": "Managing server configuration, CI/CD pipelines, and deploying applications to live environments."
+    },
+    "media_prod": {
+      "title": "Media Production",
+      "photo_name": "Photography",
+      "photo_desc": "Professional product, portrait, and event photography to create stunning visual assets.",
+      "video_name": "Videography",
+      "video_desc": "Shooting high-quality video content for promotional materials, social media, and corporate needs.",
+      "edit_name": "Video Editing",
+      "edit_desc": "Assembling and refining footage using Adobe Premiere Pro & After Effects to tell a compelling story."
+    },
+    "marketing": {
+      "title": "Digital Marketing",
+      "ads_name": "Paid Advertising",
+      "ads_desc": "Creating and managing targeted ad campaigns on platforms like Google Ads and Facebook Ads to drive traffic and conversions."
+    }
+  },
+  "projects": {
+    "main_title": "Projects",
+    "subtitle": "MY CREATIONS",
+    "view_project_btn": "View Project",
+    "illustration_alt": "Illustration of project development",
+    "items": {
+      "sas_website": {
+        "title": "SAS Website",
+        "desc": "A modern and responsive landing page for a SaaS company, featuring smooth animations and a clean user interface."
+      },
+      "social_media": {
+        "title": "Social Media Website",
+        "desc": "A platform for users to connect and share content, with features like real-time chat and a dynamic news feed."
+      },
+      "admin_panel": {
+        "title": "Admin Panel Dashboard",
+        "desc": "A data-driven dashboard for business intelligence, featuring interactive charts and comprehensive reporting tools."
+      }
+    }
+  },
+  "gallery": {
+    "main_title": "Gallery",
+    "subtitle": "A GLIMPSE INTO MY WORK"
+  },
+  "testimonials": {
+    "main_title": "Testimonials",
+    "subtitle": "MY CLIENT REVIEWS"
+  },
+  "contact": {
+    "main_title": "Hire Me",
+    "subtitle": "FOR YOUR NEXT PROJECT",
+    "details_title": "Get in Touch",
+    "form_title": "Send Me a Message",
+    "illustration_alt": "Illustration of a person using a contact form",
+    "details": {
+      "email_label": "Email",
+      "phone_label": "Phone",
+      "location_label": "Location"
+    },
+    "form": {
+      "name_label": "Your Name",
+      "name_placeholder": "John Doe",
+      "email_label": "Your Email",
+      "email_placeholder": "john.doe{'@'}email.com",
+      "message_label": "Your Message",
+      "message_placeholder": "Let's talk about...",
+      "submit_btn": "Send Message"
+    }
+  },
+  "copyright": "© {year} {brandName}. All Rights Reserved."
+}

@@ -1,1 +1,14 @@
 @import "tailwindcss";
+
+@layer components {
+  .form-input {
+    @apply block w-full p-3 bg-gray-700 border border-gray-600 text-gray-200 rounded-lg text-sm
+           placeholder:text-gray-500
+           focus:ring-yellow-500 focus:border-yellow-500;
+  }
+
+  /* You can add other reusable classes like .btn here too */
+  .btn {
+    @apply px-6 py-3 rounded-lg font-semibold transition-colors duration-300;
+  }
+}

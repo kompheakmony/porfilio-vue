@@ -1,56 +1,79 @@
 <script setup lang="ts">
 import { Swiper, SwiperSlide } from 'swiper/vue';
-import { Pagination } from 'swiper/modules';
-
-import { projectsItems } from "../data/index.ts";
+import { Pagination, Navigation, Autoplay } from 'swiper/modules';
+import { ArrowUpRightIcon } from "@heroicons/vue/24/solid";
+import { projectsItems } from "../data/index.js";
 import ProjectsSVG from "../assets/svg/projects.svg";
-
 import "swiper/css";
 import "swiper/css/pagination";
+import "swiper/css/navigation";
+
+const modules = [Pagination, Navigation, Autoplay];
 </script>
 
 <template>
-  <section class="bg-gray-800 pb-4" id="projects">
-    <div class="md:container px-5 pt-14 min-h-screen md:min-h-min flex flex-col justify-between">
-      <div>
-        <h2 class="title text-yellow-500" data-aos="fade-down">
-          Projects
-        </h2>
-        <h4 class="subtitle" data-aos="fade-down">
-          MY CREATION
-        </h4>
-        <br />
-      </div>
-      <div class="flex items-center lg:flex-row flex-col-reverse gap-5">
-        <img
-          :src="ProjectsSVG"
-          alt="Projects illustration"
-          data-aos="fade-right"
-          class="max-w-[45vw] min-w-[22rem] bg-gray-950 rounded-3xl text-yellow-800"
-        />
-        <Swiper
-          :pagination="{ clickable: true }"
-          :space-between="20"
-          :modules="[Pagination]"
-          class="rounded-3xl pb-16 max-w-xs shadow-lg shadow-yellow-700 self-start"
-        >
-          <SwiperSlide
-            v-for="(item, index) in projectsItems"
-            :key="index"
-            class="bg-gray-950 rounded-3xl p-5 border-b-8 border-yellow-800 h-fit"
+  <section class="bg-gray-800 pb-14" id="projects">
+    <div class="container px-5 pt-14">
+      <h2 class="title text-yellow-500" data-aos="fade-down">{{ $t('projects.main_title') }}</h2>
+      <h4 class="subtitle" data-aos="fade-down">{{ $t('projects.subtitle') }}</h4>
+      <br />
+      
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        
+        <div class="flex justify-center" data-aos="fade-right">
+          <img :src="ProjectsSVG" :alt="$t('projects.illustration_alt')" class="w-full max-w-md" />
+        </div>
+        
+        <div data-aos="fade-left">
+          <Swiper
+            :modules="modules"
+            :slides-per-view="1"
+            :space-between="30"
+            :loop="true"
+            :pagination="{ clickable: true }"
+            :navigation="true"
+            :autoplay="{
+              delay: 3500,
+              disableOnInteraction: false,
+            }"
+            class="w-full"
           >
-            <img :src="item.image" :alt="item.title" class="rounded-lg" />
-            <div class="flex flex-col gap-1 mt-2">
-              <h5 class="font-bold font-Poppins text-gray-100">
-                {{ item.title }}
-              </h5>
-              <button class="font-bold text-gray-500 self-end">
-                READ MORE
-              </button>
-            </div>
-          </SwiperSlide>
-        </Swiper>
+            <SwiperSlide v-for="project in projectsItems" :key="project.id">
+              <div class="bg-gray-900/50 backdrop-blur-sm rounded-2xl overflow-hidden shadow-lg">
+                <img :src="project.image" :alt="$t(project.titleKey)" class="w-full h-56 object-cover" />
+                <div class="p-6">
+                  <h3 class="text-xl font-bold text-gray-100 mb-2">{{ $t(project.titleKey) }}</h3>
+                  
+                  <p class="text-gray-400 mb-4 text-sm leading-relaxed">
+                    {{ $t(project.descriptionKey) }}
+                  </p>
+                  
+                  <div class="flex flex-wrap gap-2 mb-4">
+                    <span v-for="tag in project.tags" :key="tag" class="bg-yellow-500/10 text-yellow-400 text-xs font-semibold px-2.5 py-1 rounded-full">
+                      {{ tag }}
+                    </span>
+                  </div>
+                  
+                  <a :href="project.link" target="_blank" class="inline-flex items-center text-yellow-500 font-semibold hover:text-yellow-400 transition-colors">
+                    {{ $t('projects.view_project_btn') }}
+                    <ArrowUpRightIcon class="ml-1.5 size-4" />
+                  </a>
+                </div>
+              </div>
+            </SwiperSlide>
+          </Swiper>
+        </div>
       </div>
     </div>
   </section>
 </template>
+
+<style>
+.swiper-button-next,
+.swiper-button-prev {
+  color: #f59e0b;
+}
+.swiper-pagination-bullet-active {
+  background-color: #f59e0b;
+}
+</style>
