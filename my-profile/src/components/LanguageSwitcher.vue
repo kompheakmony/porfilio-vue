@@ -2,11 +2,13 @@
 import { useI18n } from 'vue-i18n';
 import { watch, computed } from 'vue';
 
-const { locale } = useI18n();
+import usFlag from './assets/svg/us.svg';
+import cambodiaFlag from './assets/svg/cambodia.svg';
 
+const { locale } = useI18n();
 const locales = [
-  { code: 'en', name: 'English', flagSrc: 'https://nyzcam.vercel.app/src/assets/svg/us.svg' },
-  { code: 'km', name: 'ភាសាខ្មែរ', flagSrc: 'https://nyzcam.vercel.app/src/assets/svg/cambodia.svg' },
+  { code: 'en', name: 'English', flagSrc: usFlag },
+  { code: 'km', name: 'ភាសាខ្មែរ', flagSrc: cambodiaFlag },
 ];
 
 const currentLocaleData = computed(() => {
