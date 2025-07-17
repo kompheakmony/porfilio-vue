@@ -7,8 +7,8 @@ import cambodiaFlag from './assets/svg/cambodia.svg';
 
 const { locale } = useI18n();
 const locales = [
-  { code: 'en', name: 'English', flagSrc: usFlag },
-  { code: 'km', name: 'ភាសាខ្មែរ', flagSrc: cambodiaFlag },
+  { code: 'en', name: 'English', flagSrc: '/flags/us.svg' },
+  { code: 'km', name: 'ភាសាខ្មែរ', flagSrc: '/flags/cambodia.svg' },
 ];
 
 const currentLocaleData = computed(() => {
