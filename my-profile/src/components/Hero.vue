@@ -52,7 +52,6 @@ const heroData = {
         <div class="bg-gray-800 p-3 rounded-2xl shadow-lg">
           <img
             :src="HeroSVG"
-            <!-- Use the translated names for the alt text -->
             :alt="$t('hero.portrait_alt', { firstName: $t('hero.firstName'), lastName: $t('hero.lastName') })"
             class="w-full max-h-[70vh] object-cover rounded-xl"
           />
