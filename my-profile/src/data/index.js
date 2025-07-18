@@ -44,11 +44,6 @@ export const navItems = [
     icon: DocumentDuplicateIcon,
   },
   {
-    labelKey: "nav.gallery",
-    href: "#gallery",
-    icon: PhotoIcon,
-  },
-  {
     labelKey: "nav.contact",
     href: "#contact",
     icon: UserIcon,
