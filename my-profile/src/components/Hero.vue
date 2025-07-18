@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import HeroSVG from "../assets/svg/hero.svg";
+import HeroIMG from "../assets/img/profile.png";
 
 const heroData = {
   stats: [
@@ -51,7 +51,7 @@ const heroData = {
       <div class="lg:col-span-4 flex justify-center items-center order-first lg:order-none" data-aos="zoom-in" data-aos-delay="200">
         <div class="bg-gray-800 p-3 rounded-2xl shadow-lg">
           <img
-            :src="HeroSVG"
+            :src="HeroIMG"
             :alt="$t('hero.portrait_alt', { firstName: $t('hero.firstName'), lastName: $t('hero.lastName') })"
             class="w-full max-h-[70vh] object-cover rounded-xl"
           />
