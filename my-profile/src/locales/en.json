@@ -98,6 +98,18 @@
       "admin_panel": {
         "title": "Admin Panel Dashboard",
         "desc": "A data-driven dashboard for business intelligence, featuring interactive charts and comprehensive reporting tools."
+      },
+      "tinhnobchet": {
+        "title": "Car Marketplace & Review",
+        "desc": "A full system of Car Marketplace and Car review."
+      },
+      "tinhnob_prop": {
+        "title": "Property Sale",
+        "desc": "A Completed Property salling website user can explore many property"
+      },
+      "sabay_gift": {
+        "title": "Gift Store E-Commerce",
+        "desc": "Build with modern technology better user experience and simple user interface."
       }
     }
   },
