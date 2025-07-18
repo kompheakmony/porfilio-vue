@@ -19,26 +19,25 @@ const updateActive = (index: number) => {
 
 <template>
     <div class="w-full flex justify-center">
-      <header class="fixed top-0 left-0 z-50 w-full grid grid-cols-3 items-center p-5 md:py-4 bg-gray-900/80 backdrop-blur-md">
-          <div class="justify-self-start">
-            <div
-              class="sm:cursor-pointer z-[999] rounded-lg bg-yellow-700/70 p-2"
-              @click="toggleShowMenu"
-            >
-              <AdjustmentsHorizontalIcon class="size-8 text-yellow-100" />
-            </div>
+      <header class="w-full grid grid-cols-3 items-center p-5 md:py-4">
+        <div class="justify-self-start">
+          <div
+            class="sm:cursor-pointer z-[999] rounded-lg bg-yellow-700/70 p-2"
+            @click="toggleShowMenu"
+          >
+            <AdjustmentsHorizontalIcon class="size-8 text-yellow-100" />
           </div>
-          <div class="justify-self-center">
-            <a href="#home" @click="updateActive(0)" class="text-2xl font-bold text-yellow-500">
-              NYZ CAM
-            </a>
-          </div>
-          <div class="justify-self-end">
-            <div class="w-36">
-              <LanguageSwitcher />
-            </div>
-          </div>
-        </header>
+        </div>
+        <div class="justify-self-center">
+          <a href="#home" @click="updateActive(0)" class="text-2xl font-bold text-yellow-500">
+            NYZ CAM
+          </a>
+        </div>
+        <div class="justify-self-end">
+            <LanguageSwitcher />
+        </div>
+        
+      </header>
 
       <transition name="navbar-slide-fade">
           <nav
