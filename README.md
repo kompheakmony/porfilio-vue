@@ -39,7 +39,7 @@ You need to have [Node.js](https://nodejs.org/) (version 18 or higher is recomme
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/your-username/my-profile.git
+    git clone https://github.com/kompheakmony/porfilio-vue.git
     ```
 2.  **Navigate to the project directory:**
     ```bash
