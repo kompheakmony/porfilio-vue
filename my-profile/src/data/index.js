@@ -15,9 +15,6 @@ import {
   MapPinIcon
 } from '@heroicons/vue/24/solid';
 
-import ProjectImg1 from "../assets/img/project1.png";
-import ProjectImg2 from "../assets/img/project2.png";
-import ProjectImg3 from "../assets/img/project3.png";
 import ProjectImg4 from "../assets/img/www.tinhnob70.com.png";
 import ProjectImg5 from "../assets/img/property.tinhnob70.com_.png";
 import ProjectImg6 from "../assets/img/www.sabaygift.com.png";
