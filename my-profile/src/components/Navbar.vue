@@ -13,7 +13,7 @@ const toggleShowMenu = () => {
 
 const updateActive = (index: number) => {
     active.value = index;
-    showMenu.value = false;
+    showMenu.value = true;
 }
 </script>
 
@@ -52,7 +52,7 @@ const updateActive = (index: number) => {
                 class="text-xl p-2.5 rounded-full sm:cursor-pointer transition-colors"
                 :class="{ 'bg-yellow-500 text-gray-800': active === index }"
                 >
-                <component :is="item.icon" class="size-6" />
+                <component :is="item.icon" class="size-5" />
             </a>
           </nav>
         </transition>
