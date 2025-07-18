@@ -87,29 +87,17 @@
     "view_project_btn": "View Project",
     "illustration_alt": "Illustration of project development",
     "items": {
-      "sas_website": {
-        "title": "SAS Website",
-        "desc": "A modern and responsive landing page for a SaaS company, featuring smooth animations and a clean user interface."
-      },
-      "social_media": {
-        "title": "Social Media Website",
-        "desc": "A platform for users to connect and share content, with features like real-time chat and a dynamic news feed."
-      },
-      "admin_panel": {
-        "title": "Admin Panel Dashboard",
-        "desc": "A data-driven dashboard for business intelligence, featuring interactive charts and comprehensive reporting tools."
-      },
       "tinhnobchet": {
-        "title": "Car Marketplace & Review",
-        "desc": "A full system of Car Marketplace and Car review."
+        "title": "Car Marketplace & Reviews",
+        "desc": "A comprehensive platform for buying, selling, and reviewing cars, featuring detailed listings and user-generated ratings."
       },
       "tinhnob_prop": {
-        "title": "Property Sale",
-        "desc": "A Completed Property salling website user can explore many property"
+        "title": "Property Sales Platform",
+        "desc": "A complete real estate platform where users can browse, search, and view listings for various properties for sale."
       },
       "sabay_gift": {
-        "title": "Gift Store E-Commerce",
-        "desc": "Build with modern technology better user experience and simple user interface."
+        "title": "E-commerce Gift Store",
+        "desc": "Built with modern technologies to provide a superior user experience and a clean, simple user interface."
       }
     }
   },
