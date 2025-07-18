@@ -62,7 +62,7 @@ export const projectsItems = [
   {
     id: 'tinhnobchet',
     image: ProjectImg4,
-    link: '#',
+    link: 'https://www.tinhnob70.com/',
     tags: ['Laravel', 'MySql', 'Chart.js'],
     titleKey: 'projects.items.tinhnobchet.title',
     descriptionKey: 'projects.items.tinhnobchet.desc'
@@ -70,7 +70,7 @@ export const projectsItems = [
   {
     id: 'tinhnob_prop',
     image: ProjectImg5,
-    link: '#',
+    link: 'https://property.tinhnob70.com/',
     tags: ['Laravel', 'MySql', 'Chart.js'],
     titleKey: 'projects.items.tinhnob_prop.title',
     descriptionKey: 'projects.items.tinhnob_prop.desc'
@@ -78,35 +78,11 @@ export const projectsItems = [
   {
     id: 'sabay_gift',
     image: ProjectImg6,
-    link: '#',
+    link: 'https://sabaygift.com/',
     tags: ['Laravel', 'MySql', 'Vue.js'],
     titleKey: 'projects.items.sabay_gift.title',
     descriptionKey: 'projects.items.sabay_gift.desc'
-  },
-  {
-    id: 'sas_website', 
-    image: ProjectImg1,
-    link: '#',
-    tags: ['Vue.js', 'Tailwind CSS', 'Vite'],
-    titleKey: 'projects.items.sas_website.title',
-    descriptionKey: 'projects.items.sas_website.desc'
-  },
-  {
-    id: 'social_media',
-    image: ProjectImg2,
-    link: '#',
-    tags: ['Laravel', 'React', 'MySQL'],
-    titleKey: 'projects.items.social_media.title',
-    descriptionKey: 'projects.items.social_media.desc'
-  },
-  {
-    id: 'admin_panel',
-    image: ProjectImg3,
-    link: '#',
-    tags: ['Vue.js', 'Vuex', 'Chart.js'],
-    titleKey: 'projects.items.admin_panel.title',
-    descriptionKey: 'projects.items.admin_panel.desc'
-  },
+  }
 ];
 
 export const skillCategories = [
