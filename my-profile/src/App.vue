@@ -31,7 +31,7 @@ onMounted(() => {
 
 <template>
   <div :class="localeClass">
-  <div class="min-h-screen bg-gray-800 flex justify-center items-start p-4 sm:p-6 lg:p-8">
+  <div class="min-h-screen bg-gray-800 flex justify-center items-start p-0 sm:p-6 lg:p-8">
     <div class="w-full max-w-screen-xl bg-gray-950 rounded-xl shadow-2xl overflow-hidden relative">
       <Navbar />
       <Hero />
