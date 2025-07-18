@@ -18,6 +18,9 @@ import {
 import ProjectImg1 from "../assets/img/project1.png";
 import ProjectImg2 from "../assets/img/project2.png";
 import ProjectImg3 from "../assets/img/project3.png";
+import ProjectImg4 from "../assets/img/www.tinhnob70.com.png";
+import ProjectImg5 from "../assets/img/property.tinhnob70.com_.png";
+import ProjectImg6 from "../assets/img/www.sabaygift.com.png";
 import Avatar1 from "../assets/img/avatar1.png";
 import Avatar2 from "../assets/img/avatar2.png";
 import Avatar3 from "../assets/img/avatar3.png";
@@ -56,6 +59,30 @@ export const navItems = [
 ];
 
 export const projectsItems = [
+  {
+    id: 'tinhnobchet',
+    image: ProjectImg4,
+    link: '#',
+    tags: ['Laravel', 'MySql', 'Chart.js'],
+    titleKey: 'projects.items.tinhnobchet.title',
+    descriptionKey: 'projects.items.tinhnobchet.desc'
+  },
+  {
+    id: 'tinhnob_prop',
+    image: ProjectImg5,
+    link: '#',
+    tags: ['Laravel', 'MySql', 'Chart.js'],
+    titleKey: 'projects.items.tinhnob_prop.title',
+    descriptionKey: 'projects.items.tinhnob_prop.desc'
+  },
+  {
+    id: 'sabay_gift',
+    image: ProjectImg6,
+    link: '#',
+    tags: ['Laravel', 'MySql', 'Vue.js'],
+    titleKey: 'projects.items.sabay_gift.title',
+    descriptionKey: 'projects.items.sabay_gift.desc'
+  },
   {
     id: 'sas_website', 
     image: ProjectImg1,
