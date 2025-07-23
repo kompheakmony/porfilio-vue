@@ -36,6 +36,7 @@ export const navItems = [
   },
   {
     labelKey: "nav.services",
+    href: "#services",
     icon: Cog6ToothIcon,
   },
   {
