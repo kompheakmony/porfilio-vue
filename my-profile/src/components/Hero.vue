@@ -59,10 +59,19 @@ const heroData = {
       </div>
 
       <div class="hidden lg:flex lg:col-span-3 justify-center items-center bg-yellow-500 rounded-2xl shadow-md self-stretch" data-aos="slide-left" data-aos-delay="400">
-        <h2 class="transform -rotate-90 text-xl font-bold text-gray-900 tracking-wider uppercase">
-          <span>{{ $t('hero.firstName') }}</span>
-          <span class="text-white">{{ $t('hero.lastName') }}</span>
-        </h2>
+        <div class="transform -rotate-90 text-center">
+          <h2 class="text-xl font-bold text-gray-900 tracking-wider uppercase whitespace-nowrap">
+            <span>{{ $t('hero.firstName') }}</span>
+            <span class="text-white">{{ $t('hero.lastName') }}</span>
+          </h2>
+          <p 
+            class="mt-4 text-sm text-white italic"
+            data-aos="fade-right"
+            data-aos-delay="600"
+          >
+            "{{ $t('hero.quote') }}"
+          </p>
+        </div>
       </div>
 
     </div>
