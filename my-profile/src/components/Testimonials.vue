@@ -1,9 +1,14 @@
 <script setup lang="ts">
-import { Swiper, SwiperSlide } from 'swiper/vue';
-import { EffectCoverflow, Pagination, Autoplay, Navigation } from 'swiper/modules';
+import { Swiper, SwiperSlide } from "swiper/vue";
+import {
+  EffectCoverflow,
+  Pagination,
+  Autoplay,
+  Navigation,
+} from "swiper/modules";
 import { ChatBubbleLeftRightIcon } from "@heroicons/vue/24/solid";
 
-import { testimonialsItems } from '../data/index.js';
+import { testimonialsItems } from "../data/index.js";
 
 const modules = [EffectCoverflow, Pagination, Autoplay, Navigation];
 </script>
@@ -11,10 +16,14 @@ const modules = [EffectCoverflow, Pagination, Autoplay, Navigation];
 <template>
   <section class="bg-gradient-to-t from-gray-900 to-gray-800">
     <div class="container px-5 py-14">
-      <h2 class="title text-yellow-500" data-aos="fade-down">{{ $t('testimonials.main_title') }}</h2>
-      <h4 class="subtitle" data-aos="fade-down">{{ $t('testimonials.subtitle') }}</h4>
+      <h2 class="title text-sky-500" data-aos="fade-down">
+        {{ $t("testimonials.main_title") }}
+      </h2>
+      <h4 class="subtitle" data-aos="fade-down">
+        {{ $t("testimonials.subtitle") }}
+      </h4>
       <br />
-      
+
       <Swiper
         :modules="modules"
         effect="coverflow"
@@ -43,19 +52,27 @@ const modules = [EffectCoverflow, Pagination, Autoplay, Navigation];
         data-aos="zoom-in"
       >
         <SwiperSlide v-for="item in testimonialsItems" :key="item.name">
-          <div class="bg-gray-800/60 backdrop-blur-md rounded-2xl p-8 text-center h-full flex flex-col">
-            <ChatBubbleLeftRightIcon class="w-12 h-12 mx-auto text-yellow-500/50 mb-4" />
-            
+          <div
+            class="bg-gray-800/60 backdrop-blur-md rounded-2xl p-8 text-center h-full flex flex-col"
+          >
+            <ChatBubbleLeftRightIcon
+              class="w-12 h-12 mx-auto text-sky-500/50 mb-4"
+            />
+
             <blockquote class="flex-grow">
               <p class="text-gray-300 leading-relaxed italic">
                 "{{ item.review }}"
               </p>
             </blockquote>
-            
+
             <div class="mt-6 border-t border-gray-700 pt-6">
-              <img :src="item.image" :alt="item.name" class="w-16 h-16 rounded-full mx-auto mb-3 shadow-md" />
+              <img
+                :src="item.image"
+                :alt="item.name"
+                class="w-16 h-16 rounded-full mx-auto mb-3 shadow-md"
+              />
               <h6 class="font-bold text-gray-100">{{ item.name }}</h6>
-              <p class="text-sm text-yellow-400">Valued Client</p>
+              <p class="text-sm text-sky-400">Valued Client</p>
             </div>
           </div>
         </SwiperSlide>
@@ -76,12 +93,12 @@ const modules = [EffectCoverflow, Pagination, Autoplay, Navigation];
 
 .swiper-button-next,
 .swiper-button-prev {
-  color: #f59e0b;
+  color: #019eb1;
 }
 .swiper-pagination-bullet-active {
-  background-color: #f59e0b !important;
+  background-color: #019eb1 !important;
 }
 .swiper-pagination-bullet {
-  background-color: #d1d5db;
+  background-color: #019eb1;
 }
 </style>

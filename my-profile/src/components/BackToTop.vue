@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from 'vue';
-import { ArrowUpIcon } from '@heroicons/vue/24/solid';
+import { ref, onMounted, onUnmounted } from "vue";
+import { ArrowUpIcon } from "@heroicons/vue/24/solid";
 
 const isVisible = ref(false);
 
@@ -15,16 +15,16 @@ const handleScroll = () => {
 const scrollToTop = () => {
   window.scrollTo({
     top: 0,
-    behavior: 'smooth',
+    behavior: "smooth",
   });
 };
 
 onMounted(() => {
-  window.addEventListener('scroll', handleScroll);
+  window.addEventListener("scroll", handleScroll);
 });
 
 onUnmounted(() => {
-  window.removeEventListener('scroll', handleScroll);
+  window.removeEventListener("scroll", handleScroll);
 });
 </script>
 
@@ -33,7 +33,7 @@ onUnmounted(() => {
     <button
       v-if="isVisible"
       @click="scrollToTop"
-      class="fixed bottom-10 right-10 z-[990] bg-yellow-600 text-white p-3 rounded-full shadow-lg transition-transform duration-300 hover:bg-yellow-500 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900 focus:ring-yellow-500"
+      class="fixed bottom-10 right-10 z-[990] bg-sky-600 text-white p-3 rounded-full shadow-lg transition-transform duration-300 hover:bg-sky-500 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900 focus:ring-sky-500"
       aria-label="Scroll back to top"
     >
       <ArrowUpIcon class="w-6 h-6" />

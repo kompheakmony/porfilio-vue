@@ -6,7 +6,7 @@ import { CheckCircleIcon } from '@heroicons/vue/24/solid';
 <template>
   <section id="services">
     <div class="container px-5 py-14">
-      <h2 class="title text-yellow-500" data-aos="fade-down">
+      <h2 class="title text-sky-500" data-aos="fade-down">
         {{ $t('services.main_title') }}
       </h2>
       <h4 class="subtitle" data-aos="fade-down">
@@ -23,13 +23,13 @@ import { CheckCircleIcon } from '@heroicons/vue/24/solid';
                  flex flex-col
                  transition-all duration-300 cursor-pointer
                  group-hover:blur-sm hover:!blur-none
-                 hover:-translate-y-2 hover:shadow-2xl hover:shadow-yellow-500/20"
+                 hover:-translate-y-2 hover:shadow-2xl hover:shadow-sky-500/20"
           data-aos="fade-up"
           :data-aos-delay="index * 200"
         >
           <div class="flex items-start gap-4 mb-4">
-            <div class="bg-yellow-500/10 inline-block p-4 rounded-xl">
-              <component :is="service.icon" class="w-8 h-8 text-yellow-500" />
+            <div class="bg-sky-500/10 inline-block p-4 rounded-xl">
+              <component :is="service.icon" class="w-8 h-8 text-sky-500" />
             </div>
             <h3 class="text-xl font-bold text-gray-100 pt-2">{{ $t(service.titleKey) }}</h3>
           </div>
@@ -42,7 +42,7 @@ import { CheckCircleIcon } from '@heroicons/vue/24/solid';
             <h4 class="font-semibold text-gray-300 mb-4">{{ $t('services.included') }}</h4>
             <ul class="space-y-3">
               <li v-for="key in service.subServiceKeys" :key="key" class="flex items-center gap-3">
-                <CheckCircleIcon class="w-5 h-5 text-yellow-500 flex-shrink-0" />
+                <CheckCircleIcon class="w-5 h-5 text-sky-500 flex-shrink-0" />
                 <span class="text-gray-400">{{ $t(key) }}</span>
               </li>
             </ul>

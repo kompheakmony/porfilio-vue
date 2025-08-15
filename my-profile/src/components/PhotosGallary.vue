@@ -52,7 +52,7 @@ onUnmounted(() => {
 <template>
   <section id="gallery" class="bg-gray-800 py-14">
     <div class="container px-5">
-      <h2 class="title text-yellow-500" data-aos="fade-down">{{ $t('gallery.main_title') }}</h2>
+      <h2 class="title text-sky-500" data-aos="fade-down">{{ $t('gallery.main_title') }}</h2>
       <h4 class="subtitle" data-aos="fade-down">{{ $t('gallery.subtitle') }}</h4>
       <br />
       <div class="columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4">
@@ -67,7 +67,7 @@ onUnmounted(() => {
           <img 
             :src="photo.src" 
             :alt="photo.alt" 
-            class="rounded-lg w-full h-full object-cover transition-all duration-300 group-hover:shadow-2xl group-hover:shadow-yellow-500/20 group-hover:scale-105"
+            class="rounded-lg w-full h-full object-cover transition-all duration-300 group-hover:shadow-2xl group-hover:shadow-sky-500/20 group-hover:scale-105"
           />
         </div>
       </div>

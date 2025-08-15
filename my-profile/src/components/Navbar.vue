@@ -22,14 +22,14 @@ const updateActive = (index: number) => {
       <header class="w-full grid grid-cols-3 items-center p-5 md:py-4">
         <div class="justify-self-start">
           <div
-            class="sm:cursor-pointer z-[999] rounded-lg bg-yellow-700/70 p-2"
+            class="sm:cursor-pointer z-[999] rounded-lg bg-sky-700/70 p-2"
             @click="toggleShowMenu"
           >
-            <AdjustmentsHorizontalIcon class="size-8 text-yellow-100" />
+            <AdjustmentsHorizontalIcon class="size-8 text-sky-100" />
           </div>
         </div>
         <div class="justify-self-center">
-          <a href="#home" @click="updateActive(0)" class="text-2xl font-bold text-yellow-500">
+          <a href="#home" @click="updateActive(0)" class="text-2xl font-bold text-sky-500">
             NYZ CAM
           </a>
         </div>
@@ -42,13 +42,13 @@ const updateActive = (index: number) => {
       <transition name="navbar-slide-fade">
           <nav
             v-if="showMenu"
-            class="fixed z-[999] left-1/2 -translate-x-1/2 flex items-center gap-5 bg-yellow-800/60 px-6 py-3 backdrop-blur-md rounded-full text-gray-200 duration-300 bottom-10"
+            class="fixed z-[999] left-1/2 -translate-x-1/2 flex items-center gap-5 bg-sky-800/60 px-6 py-3 backdrop-blur-md rounded-full text-gray-200 duration-300 bottom-10"
           >
             <a v-for="(item, index) in navItems" :key="index"
                 :href="item.href"
                 @click="updateActive(index)"
                 class="text-xl p-2.5 rounded-full sm:cursor-pointer transition-colors"
-                :class="{ 'bg-yellow-500 text-gray-800': active === index }"
+                :class="{ 'bg-sky-500 text-gray-800': active === index }"
                 >
                 <component :is="item.icon" class="size-6" />
             </a>
