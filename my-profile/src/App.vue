@@ -9,6 +9,7 @@ import Testimonials from './components/Testimonials.vue'
 import Contact from './components/Contact.vue'
 import Footer from './components/Footer.vue'
 import BackToTop from './components/BackToTop.vue'
+import DigitalCards from './components/DigitalCards.vue';
 import { onMounted } from "vue";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -38,6 +39,7 @@ onMounted(() => {
       <Skills />
       <Services />
       <Projects />
+      <DigitalCards />
       <PhotosGallary />
       <Testimonials />
       <Contact />

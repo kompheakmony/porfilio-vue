@@ -102,6 +102,34 @@
       }
     }
   },
+  "invitationThemes": {
+    "main_title": "Explore Our Digital Invitation Card Themes",
+    "subtitle": "Find the perfect design for your special event, from elegant to playful.",
+    "includedFeatures": "Key Features",
+    "elegantFloral": {
+      "title": "Elegant Floral Charm",
+      "description": "A timeless design with beautiful floral accents, perfect for weddings and sophisticated events."
+    },
+    "modernGeometric": {
+      "title": "Modern Geometric Style",
+      "description": "Clean lines and abstract shapes create a contemporary and chic invitation."
+    },
+    "whimsicalStorybook": {
+      "title": "Whimsical Storybook Adventure",
+      "description": "Bring your event to life with enchanting illustrations and a touch of fantasy, ideal for birthdays and themed parties."
+    },
+    "features": {
+      "customColors": "Customizable Color Schemes",
+      "premiumFonts": "Selection of Premium Fonts",
+      "rsvpTracking": "Integrated RSVP Tracking",
+      "interactiveElements": "Interactive Design Elements",
+      "photoGallery": "Personalized Photo Gallery",
+      "guestMessages": "Guest Messaging System",
+      "animatedIllustrations": "Animated Illustrations",
+      "soundEffects": "Optional Sound Effects",
+      "customStoryline": "Custom Storyline Integration"
+    }
+  },
   "gallery": {
     "main_title": "Gallery",
     "subtitle": "A GLIMPSE INTO MY WORK"

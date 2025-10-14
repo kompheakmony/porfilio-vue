@@ -12,7 +12,10 @@ import {
   PhotoIcon,
   EnvelopeIcon,
   PhoneIcon,
-  MapPinIcon
+  MapPinIcon,
+  HeartIcon,
+  SparklesIcon,
+  GiftIcon
 } from '@heroicons/vue/24/solid';
 
 import ProjectImg4 from "../assets/img/www.tinhnob70.com.png";
@@ -76,6 +79,45 @@ export const projectsItems = [
     titleKey: 'projects.items.sabay_gift.title',
     descriptionKey: 'projects.items.sabay_gift.desc'
   }
+];
+
+export const cardThemes = [
+  {
+    id: 'elegant-floral',
+    titleKey: 'invitationThemes.elegantFloral.title',
+    descriptionKey: 'invitationThemes.elegantFloral.description',
+    image: ['/images/card_cover.png', '/images/card_cover.png', '/images/card_cover.png'],
+    featuresKeys: [
+      'invitationThemes.features.customColors',
+      'invitationThemes.features.premiumFonts',
+      'invitationThemes.features.rsvpTracking'
+    ],
+    icon: HeartIcon,
+  },
+  {
+    id: 'modern-geometric',
+    titleKey: 'invitationThemes.modernGeometric.title',
+    descriptionKey: 'invitationThemes.modernGeometric.description',
+    image: ['/images/card_cover.png', '/images/card_cover.png', '/images/card_cover.png'],
+    featuresKeys: [
+      'invitationThemes.features.interactiveElements',
+      'invitationThemes.features.photoGallery',
+      'invitationThemes.features.guestMessages'
+    ],
+    icon: SparklesIcon,
+  },
+  {
+    id: 'whimsical-storybook',
+    titleKey: 'invitationThemes.whimsicalStorybook.title',
+    descriptionKey: 'invitationThemes.whimsicalStorybook.description',
+    image: '/images/card_cover.png',
+    featuresKeys: [
+      'invitationThemes.features.animatedIllustrations',
+      'invitationThemes.features.soundEffects',
+      'invitationThemes.features.customStoryline'
+    ],
+    icon: GiftIcon,
+  },
 ];
 
 export const skillCategories = [
