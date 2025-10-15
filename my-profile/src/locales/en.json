@@ -112,19 +112,19 @@
     },
     "modernGeometric": {
       "title": "Modern Geometric Style",
-      "description": "Clean lines and abstract shapes create a contemporary and chic invitation."
+      "description": "Clean and abstract shapes create a contemporary and chic invitation."
     },
     "whimsicalStorybook": {
-      "title": "Whimsical Storybook Adventure",
-      "description": "Bring your event to life with enchanting illustrations and a touch of fantasy, ideal for birthdays and themed parties."
+      "title": "Customize",
+      "description": "Bring your event to life with enchanting illustrations and a touch of fantasy, ideal for your event."
     },
     "features": {
       "customColors": "Customizable Color Schemes",
       "premiumFonts": "Selection of Premium Fonts",
-      "rsvpTracking": "Integrated RSVP Tracking",
+      "rsvpTracking": "Countdown datetime",
       "interactiveElements": "Interactive Design Elements",
-      "photoGallery": "Personalized Photo Gallery",
-      "guestMessages": "Guest Messaging System",
+      "photoGallery": "Pre-wedding Photo Gallery",
+      "guestMessages": "Auto redirect map location",
       "animatedIllustrations": "Animated Illustrations",
       "soundEffects": "Optional Sound Effects",
       "customStoryline": "Custom Storyline Integration"

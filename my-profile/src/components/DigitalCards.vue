@@ -1,6 +1,13 @@
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted, computed } from 'vue';
+import { ref, computed } from 'vue'; // Removed onMounted, onUnmounted
 import { cardThemes } from '../data/index.js';
+import { CheckCircleIcon } from '@heroicons/vue/24/solid';
+
+// ─────────────────────────────
+// Swiper Imports
+// ─────────────────────────────
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import { Autoplay, EffectFade, Pagination } from 'swiper/modules';
 
 // ─────────────────────────────
 // Type Definitions
@@ -16,11 +23,15 @@ interface CardTheme {
 }
 
 // ─────────────────────────────
+// Swiper Modules
+// ─────────────────────────────
+const swiperModules = [Autoplay, EffectFade, Pagination];
+
+// ─────────────────────────────
 // Reactive State
 // ─────────────────────────────
 const activeTheme = ref<string | null>(null);
-const currentImageIndex = ref<Record<string, number>>({});
-const rotationIntervals = ref<Record<string, ReturnType<typeof setInterval>>>({});
+// Removed: currentImageIndex and rotationIntervals
 
 // ─────────────────────────────
 // Computed: Theme Configurations
@@ -72,50 +83,9 @@ const hasMultipleImages = (theme: CardTheme): boolean => {
   return imgs.length > 1;
 };
 
-const getCurrentImage = (theme: CardTheme): string => {
-  const imgs = getImageArray(theme);
-  const index = currentImageIndex.value[theme.id] || 0;
-  return imgs[index];
-};
+// Removed: getCurrentImage, startImageRotation, stopImageRotation
+// Removed Lifecycle Hooks (onMounted, onUnmounted)
 
-// ─────────────────────────────
-// Image Rotation Logic
-// ─────────────────────────────
-const startImageRotation = (themeId: string, images: string[]) => {
-  stopImageRotation(themeId); // ✅ Ensure cleanup before starting a new one
-
-  if (currentImageIndex.value[themeId] == null) {
-    currentImageIndex.value[themeId] = 0;
-  }
-
-  rotationIntervals.value[themeId] = setInterval(() => {
-    const current = currentImageIndex.value[themeId] ?? 0;
-    currentImageIndex.value[themeId] = (current + 1) % images.length;
-  }, 3000);
-};
-
-const stopImageRotation = (themeId: string) => {
-  const interval = rotationIntervals.value[themeId];
-  if (interval) {
-    clearInterval(interval);
-    delete rotationIntervals.value[themeId];
-  }
-};
-
-// ─────────────────────────────
-// Lifecycle Hooks
-// ─────────────────────────────
-onMounted(() => {
-  cardThemes.forEach(theme => {
-    if (hasMultipleImages(theme)) {
-      currentImageIndex.value[theme.id] = 0;
-    }
-  });
-});
-
-onUnmounted(() => {
-  Object.values(rotationIntervals.value).forEach(clearInterval);
-});
 </script>
 
 
@@ -146,8 +116,6 @@ onUnmounted(() => {
               : ''
           ]"
           @click="setActiveTheme(theme.id)"
-          @mouseenter="hasMultipleImages(theme) ? startImageRotation(theme.id, getImageArray(theme)) : null"
-          @mouseleave="hasMultipleImages(theme) ? stopImageRotation(theme.id) : null"
           data-aos="fade-up"
           :data-aos-delay="index * 100"
         >
@@ -166,32 +134,41 @@ onUnmounted(() => {
             <div :class="['absolute top-4 right-4 z-10 backdrop-blur-sm p-2.5 rounded-full shadow-lg', getThemeConfig(theme).iconBg]">
               <component :is="theme.icon" :class="['w-6 h-6', getThemeConfig(theme).iconColor]" />
             </div>
-
-            <div v-if="hasMultipleImages(theme)" class="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-10 flex gap-1.5">
-              <div 
-                v-for="(img, idx) in getImageArray(theme)" 
-                :key="idx"
-                :class="[
-                  'w-2 h-2 rounded-full transition-all duration-300',
-                  currentImageIndex[theme.id] === idx 
-                    ? 'bg-white w-6' 
-                    : 'bg-white/50 hover:bg-white/80'
-                ]"
-              ></div>
-            </div>
             
             <div class="relative h-56 overflow-hidden">
-              <transition name="fade" mode="out-in">
-                <img 
-                  :key="getCurrentImage(theme)"
-                  :src="getCurrentImage(theme)" 
-                  :alt="$t(theme.titleKey)" 
-                  class="w-full h-full object-cover object-center transition-all duration-700 group-hover:scale-110 group-hover:brightness-105" 
-                />
-              </transition>
-              <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/20 to-transparent opacity-60"></div>
+              <Swiper
+                :modules="swiperModules"
+                :slides-per-view="1"
+                :loop="hasMultipleImages(theme)"
+                :autoplay="hasMultipleImages(theme) ? { delay: 3000, disableOnInteraction: false } : false"
+                :effect="hasMultipleImages(theme) ? 'fade' : 'slide'"
+                :fade-effect="{ crossFade: true }"
+                :pagination="hasMultipleImages(theme) ? { clickable: true } : false"
+                class="w-full h-full theme-swiper"
+              >
+                <SwiperSlide 
+                  v-for="(imageSrc, imgIndex) in getImageArray(theme)"
+                  :key="imgIndex"
+                  class="w-full h-full"
+                >
+                  <img 
+                    :src="imageSrc" 
+                    :alt="`${$t(theme.titleKey)} - ${imgIndex + 1}`" 
+                    class="w-full h-full object-cover object-center transition-all duration-700 group-hover:scale-110 group-hover:brightness-105" 
+                  />
+                </SwiperSlide>
+
+                <SwiperSlide v-if="!hasMultipleImages(theme)" class="w-full h-full">
+                   <img 
+                    :src="getImageArray(theme)[0]" 
+                    :alt="`${$t(theme.titleKey)}`" 
+                    class="w-full h-full object-cover object-center transition-all duration-700 group-hover:scale-110 group-hover:brightness-105" 
+                  />
+                </SwiperSlide>
+              </Swiper>
+              <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/20 to-transparent opacity-60 pointer-events-none"></div>
               
-              <div :class="['absolute inset-0 bg-gradient-to-t to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-end justify-center pb-6', 
+              <div :class="['absolute inset-0 bg-gradient-to-t to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-end justify-center pb-6 pointer-events-none', 
                            theme.id === 'classic-khmer' ? 'from-amber-600/90' : theme.id === 'modern-design' ? 'from-purple-600/90' : 'from-blue-600/90']">
                 <span class="text-white font-semibold text-sm bg-white/20 backdrop-blur-md px-6 py-2.5 rounded-full border border-white/30 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 shadow-lg">
                   {{ hasMultipleImages(theme) ? `${$t('invitationThemes.preview') || 'View'} ${getImageArray(theme).length} Designs` : $t('invitationThemes.preview') || 'Preview Theme' }}
@@ -201,7 +178,6 @@ onUnmounted(() => {
           </div>
 
           <div class="p-7 flex flex-col flex-grow">
-            <!-- Title -->
             <div class="mb-5">
               <h3 :class="['text-2xl font-bold text-gray-800 dark:text-gray-100 mb-2 transition-colors duration-300', getThemeConfig(theme).hoverColor]">
                 {{ $t(theme.titleKey) }}
@@ -277,6 +253,26 @@ onUnmounted(() => {
   </section>
 </template>
 
+<style>
+/* * NOTE: Swiper's pagination dots are outside the Swiper container 
+* by default, which can cause them to be clipped by the parent overflow-hidden.
+* These custom styles adjust the position and ensure the dots are visible.
+*/
+.theme-swiper {
+  --swiper-pagination-color: #ffffff; /* White dots */
+  --swiper-pagination-bullet-inactive-color: #ffffff;
+  --swiper-pagination-bullet-inactive-opacity: 0.6;
+  --swiper-pagination-bullet-size: 8px;
+  --swiper-pagination-bullet-horizontal-gap: 4px;
+}
+
+/* Adjust pagination to sit higher, above the CTA/overlay */
+.theme-swiper .swiper-pagination {
+    bottom: 25px; /* Adjust as needed to sit above the hover-CTA */
+    z-index: 20; /* Ensure it is above the image overlay */
+}
+</style>
+
 <style scoped>
 .line-clamp-3 {
   display: -webkit-box;
@@ -284,14 +280,5 @@ onUnmounted(() => {
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
-
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.5s ease;
-}
-
-.fade-enter-from,
-.fade-leave-to {
-  opacity: 0;
-}
+/* The old 'fade' transition and related styles are no longer needed */
 </style>

@@ -62,7 +62,7 @@
       "title": "ការអភិវឌ្ឍន៍គេហទំព័រ",
       "laravel_name": "Laravel (ផ្នែកខាងក្រោយ)",
       "laravel_desc": "បង្កើតកម្មវិធី Server-side និង APIs ដែលរឹងមាំនិងអាចពង្រីកបានជាមួយ PHP framework Laravel។",
-      "vue_name": "Vue.js (ផ្នែកខាងមុខ)",
+      "vue_name": "Vue.js, React (ផ្នែកខាងមុខ)",
       "vue_desc": "បង្កើតផ្ទាំងប្រើប្រាស់ដែលទាក់ទាញនិងមានប្រសិទ្ធភាពខ្ពស់ ជាមួយនិងបច្ចេកវិទ្យាទំនើប។",
       "deploy_name": "ការដាក់ឱ្យដំណើរការគេហទំព័រ",
       "deploy_desc": "គ្រប់គ្រងការកំណត់រចនាសម្ព័ន្ធម៉ាស៊ីនមេ CI/CD និងការដាក់កម្មវិធីឱ្យដំណើរការ។"
@@ -103,31 +103,31 @@
     }
   },
   "invitationThemes": {
-    "main_title": "Explore Our Digital Invitation Card Themes",
-    "subtitle": "Find the perfect design for your special event, from elegant to playful.",
-    "includedFeatures": "Key Features",
+    "main_title": "ចុតហ្មាយ Digital",
+    "subtitle": "ទទួលយក​ការរចនា​ដ៏​ល្អឥតខ្ចោះ​សម្រាប់​កម្មវិធី​​របស់​អ្នក បែបប្រពៃណីនិងទំនើប",
+    "includedFeatures": "លក្ខណៈពិសេស​",
     "elegantFloral": {
-      "title": "Elegant Floral Charm",
-      "description": "A timeless design with beautiful floral accents, perfect for weddings and sophisticated events."
+      "title": "រចនាបថ​​បែបប្រពៃណី",
+      "description": "ការរចនា​បែប​បុរាណ​ដែលមាន​ក្បាច់ផ្កាភ្ញី​លម្អ​យ៉ាង​ស្រស់ស្អាត ដ៏​ល្អឥតខ្ចោះ​សម្រាប់​ពិធី​មង្គលការ និង​កម្មវិធីផ្សេងៗជាច្រើន។"
     },
     "modernGeometric": {
-      "title": "Modern Geometric Style",
-      "description": "Clean lines and abstract shapes create a contemporary and chic invitation."
+      "title": "រចនាបថ​​បែបសម័យថ្មី",
+      "description": "មានទាំងសាមញ្ញ​និងឆើតឆាយ។"
     },
     "whimsicalStorybook": {
-      "title": "Whimsical Storybook Adventure",
-      "description": "Bring your event to life with enchanting illustrations and a touch of fantasy, ideal for birthdays and themed parties."
+      "title": "ជជែកតាមការចង់បាន",
+      "description": "ចង់បានរចនាបថក្នុងចិត្តរបស់អ្នកមែនទេឯ? តស់និយាយគ្នាឥឡូវ!"
     },
     "features": {
-      "customColors": "Customizable Color Schemes",
-      "premiumFonts": "Selection of Premium Fonts",
-      "rsvpTracking": "Integrated RSVP Tracking",
-      "interactiveElements": "Interactive Design Elements",
-      "photoGallery": "Personalized Photo Gallery",
-      "guestMessages": "Guest Messaging System",
-      "animatedIllustrations": "Animated Illustrations",
-      "soundEffects": "Optional Sound Effects",
-      "customStoryline": "Custom Storyline Integration"
+      "customColors": "​ជ្រើសរើសពណ៌​តាមចិត្ត",
+      "premiumFonts": "ជម្រើស​ពុម្ពអក្សរ​ពិសេសៗ",
+      "rsvpTracking": "ប្រព័ន្ធ​គិតចំនួនថ្ងៃរាប់ថយក្រោយ",
+      "interactiveElements": "ធាតុ​រចនា​អន្តរកម្ម",
+      "photoGallery": "រូប Pre-Wedding",
+      "guestMessages": "ប្រព័ន្ធ​នាំផ្លូវស្រ័យប្រវត្ត",
+      "animatedIllustrations": "រូបភាព​គំនូរ​មាន​ចលនា",
+      "soundEffects": "បែបផែន​សំឡេង​ជា​ជម្រើស",
+      "customStoryline": "ការ​បញ្ចូល​សាច់រឿង​តាម​បំណង"
     }
   },
   "gallery": {
@@ -139,7 +139,7 @@
     "subtitle": "ការវាយតម្លៃរបស់អតិថិជនរបស់ខ្ញុំ"
   },
   "contact": {
-    "main_title": "និយាយអ្នក",
+    "main_title": "តស់កាហ្វេហី",
     "subtitle": "សម្រាប់គម្រោងបន្ទាប់របស់អ្នក",
     "details_title": "ទំនាក់ទំនងមកខ្ញុំ",
     "form_title": "ផ្ញើសារមកខ្ញុំ",
