@@ -21,6 +21,11 @@ import {
 import ProjectImg4 from "../assets/img/www.tinhnob70.com.png";
 import ProjectImg5 from "../assets/img/property.tinhnob70.com_.png";
 import ProjectImg6 from "../assets/img/www.sabaygift.com.png";
+
+import GreenCard from "../assets/img/card_cover.png";
+import CynCard from "../assets/img/cover_cyn.webp";
+import RedCard from "../assets/img/cover_red.webp";
+
 import Avatar1 from "../assets/img/avatar1.png";
 import Avatar2 from "../assets/img/avatar2.png";
 import Avatar3 from "../assets/img/avatar3.png";
@@ -86,7 +91,7 @@ export const cardThemes = [
     id: 'elegant-floral',
     titleKey: 'invitationThemes.elegantFloral.title',
     descriptionKey: 'invitationThemes.elegantFloral.description',
-    image: ['/images/card_cover.png', '/images/card_cover.png', '/images/card_cover.png'],
+    image: [CynCard, GreenCard, RedCard],
     featuresKeys: [
       'invitationThemes.features.customColors',
       'invitationThemes.features.premiumFonts',
@@ -98,7 +103,7 @@ export const cardThemes = [
     id: 'modern-geometric',
     titleKey: 'invitationThemes.modernGeometric.title',
     descriptionKey: 'invitationThemes.modernGeometric.description',
-    image: ['/images/card_cover.png', '/images/card_cover.png', '/images/card_cover.png'],
+    image: [RedCard, CynCard, GreenCard],
     featuresKeys: [
       'invitationThemes.features.interactiveElements',
       'invitationThemes.features.photoGallery',
@@ -110,7 +115,7 @@ export const cardThemes = [
     id: 'whimsical-storybook',
     titleKey: 'invitationThemes.whimsicalStorybook.title',
     descriptionKey: 'invitationThemes.whimsicalStorybook.description',
-    image: '/images/card_cover.png',
+    image: GreenCard,
     featuresKeys: [
       'invitationThemes.features.animatedIllustrations',
       'invitationThemes.features.soundEffects',

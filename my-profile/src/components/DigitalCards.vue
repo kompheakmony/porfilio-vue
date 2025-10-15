@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue'; // Removed onMounted, onUnmounted
+import { ref, computed } from 'vue';
 import { cardThemes } from '../data/index.js';
 import { CheckCircleIcon } from '@heroicons/vue/24/solid';
 
@@ -7,7 +7,7 @@ import { CheckCircleIcon } from '@heroicons/vue/24/solid';
 // Swiper Imports
 // ─────────────────────────────
 import { Swiper, SwiperSlide } from 'swiper/vue';
-import { Autoplay, EffectFade, Pagination } from 'swiper/modules';
+import { Autoplay, Pagination } from 'swiper/modules';
 
 // ─────────────────────────────
 // Type Definitions
@@ -25,13 +25,12 @@ interface CardTheme {
 // ─────────────────────────────
 // Swiper Modules
 // ─────────────────────────────
-const swiperModules = [Autoplay, EffectFade, Pagination];
+const swiperModules = [Autoplay, Pagination];
 
 // ─────────────────────────────
 // Reactive State
 // ─────────────────────────────
 const activeTheme = ref<string | null>(null);
-// Removed: currentImageIndex and rotationIntervals
 
 // ─────────────────────────────
 // Computed: Theme Configurations
@@ -83,8 +82,6 @@ const hasMultipleImages = (theme: CardTheme): boolean => {
   return imgs.length > 1;
 };
 
-// Removed: getCurrentImage, startImageRotation, stopImageRotation
-// Removed Lifecycle Hooks (onMounted, onUnmounted)
 
 </script>
 
@@ -135,14 +132,13 @@ const hasMultipleImages = (theme: CardTheme): boolean => {
               <component :is="theme.icon" :class="['w-6 h-6', getThemeConfig(theme).iconColor]" />
             </div>
             
-            <div class="relative h-56 overflow-hidden">
+            <div class="relative h-56 overflow-hidden" >
               <Swiper
                 :modules="swiperModules"
                 :slides-per-view="1"
                 :loop="hasMultipleImages(theme)"
-                :autoplay="hasMultipleImages(theme) ? { delay: 3000, disableOnInteraction: false } : false"
-                :effect="hasMultipleImages(theme) ? 'fade' : 'slide'"
-                :fade-effect="{ crossFade: true }"
+                :autoplay="hasMultipleImages(theme) ? { delay: 4000, disableOnInteraction: false } : false"
+                :effect="hasMultipleImages(theme) ? 'slide' : 'slide'"
                 :pagination="hasMultipleImages(theme) ? { clickable: true } : false"
                 class="w-full h-full theme-swiper"
               >
@@ -253,26 +249,6 @@ const hasMultipleImages = (theme: CardTheme): boolean => {
   </section>
 </template>
 
-<style>
-/* * NOTE: Swiper's pagination dots are outside the Swiper container 
-* by default, which can cause them to be clipped by the parent overflow-hidden.
-* These custom styles adjust the position and ensure the dots are visible.
-*/
-.theme-swiper {
-  --swiper-pagination-color: #ffffff; /* White dots */
-  --swiper-pagination-bullet-inactive-color: #ffffff;
-  --swiper-pagination-bullet-inactive-opacity: 0.6;
-  --swiper-pagination-bullet-size: 8px;
-  --swiper-pagination-bullet-horizontal-gap: 4px;
-}
-
-/* Adjust pagination to sit higher, above the CTA/overlay */
-.theme-swiper .swiper-pagination {
-    bottom: 25px; /* Adjust as needed to sit above the hover-CTA */
-    z-index: 20; /* Ensure it is above the image overlay */
-}
-</style>
-
 <style scoped>
 .line-clamp-3 {
   display: -webkit-box;
@@ -280,5 +256,4 @@ const hasMultipleImages = (theme: CardTheme): boolean => {
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
-/* The old 'fade' transition and related styles are no longer needed */
 </style>
